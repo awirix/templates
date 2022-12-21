@@ -1,0 +1,16 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{json,lua,tl,fnl,ts}]
+indent_style = space
+
+[*.{lua,tl}]
+indent_size = 3
+quote_type = single
+
+[*.{fnl,json,ts}]
+indent_size = 4
