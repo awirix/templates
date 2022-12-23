@@ -30,8 +30,6 @@ const (
 	PresetYue
 )
 
-var Presets = _PresetValues
-
 var filesystems = map[Preset]fs.FS{
 	PresetLua:        fsLua,
 	PresetFennel:     fsFennel,
