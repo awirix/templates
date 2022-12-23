@@ -19,4 +19,10 @@ var (
 
 	//go:embed typescript
 	fsTypescript embed.FS
+
+	//go:embed teal
+	fsTeal embed.FS
+
+	//go:embed yue
+	fsYue embed.FS
 )

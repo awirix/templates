@@ -14,15 +14,31 @@ import (
 type Preset int
 
 const (
-	// PresetLua is a preset for Lua
+	// PresetLua is a preset for Lua language
 	PresetLua Preset = iota + 1
 
-	// PresetFennel is a preset for Fennel
+	// PresetFennel is a preset for Fennel language
 	PresetFennel
 
-	// PresetTypescript is a preset for Typescript
+	// PresetTypescript is a preset for Typescript language
 	PresetTypescript
+
+	// PresetTeal is a preset for the Teal language
+	PresetTeal
+
+	// PresetYue is a preset fot the Yue language
+	PresetYue
 )
+
+var Presets = _PresetValues
+
+var filesystems = map[Preset]fs.FS{
+	PresetLua:        fsLua,
+	PresetFennel:     fsFennel,
+	PresetTypescript: fsTypescript,
+	PresetTeal:       fsTeal,
+	PresetYue:        fsYue,
+}
 
 // ErrInvalidPreset is returned when an invalid preset is given
 type ErrInvalidPreset error
@@ -30,16 +46,8 @@ type ErrInvalidPreset error
 // Get gets the template tree for the given preset.
 // Returned map is a map of file names to file contents
 func Get(preset Preset, info Info) (map[string]*bytes.Buffer, error) {
-	var f fs.FS
-
-	switch preset {
-	case PresetLua:
-		f = fsLua
-	case PresetFennel:
-		f = fsFennel
-	case PresetTypescript:
-		f = fsTypescript
-	default:
+	f, ok := filesystems[preset]
+	if !ok {
 		return nil, ErrInvalidPreset(fmt.Errorf("invalid preset: %s", preset))
 	}
 
