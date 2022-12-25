@@ -1,0 +1,10 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "runtime.version": "Lua 5.1",
+    "workspace.library": [
+        {{ range $index, $path := .Libs }}
+        "{{ $path }}"{{ if lt $index (len .Libs) }},{{ end }}
+        {{ end }}
+    ],
+    "diagnostics.globals": ["Extension"]
+}
