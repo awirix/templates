@@ -21,7 +21,7 @@
 
 --- Actions are further actions that can be performed on the selected media.
 --- Something like 'Stream' or 'Download'
---- @alias Action { title: string, handler: fun(media: Media, progress: Progress), description: string? }
+--- @alias Action { title: string, handler: fun(media: Media[], progress: Progress), description: string? }
 
 --- A function that is used to pass progress information to the vivi's ui.
 --- @alias Progress fun(message: string)
@@ -50,13 +50,13 @@ M.layers = {
 M.actions = {
    {
       title = 'Search',
-      handler = function (media, progress)
+      handler = function (medias, progress)
          error('Not implemented')
       end
    },
    {
       title = 'Download',
-      handler = function (media, progress)
+      handler = function (medias, progress)
          error('Not implemented')
       end
    }

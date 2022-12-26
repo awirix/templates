@@ -12,8 +12,8 @@ export layers =
 export actions =
     * title: 'Stream'
       description: 'Stream description'
-      handler: (media, progress) ->
+      handler: (medias, progress) ->
 
     * title: 'Download'
       description: 'Download description'
-      handler: (media, progress) ->
+      handler: (medias, progress) ->

@@ -25,7 +25,7 @@ local record Layer
 end
 
 local record Action
-   handler: function(media: Media, progress: Progress)
+   handler: function(media: {Media}, progress: Progress)
    title: string
    description: string|nil
 end
@@ -56,13 +56,14 @@ M.layers = {
 M.actions = {
    {
       title = 'Stream',
-      handler = function(media: Media, progress: Progress)
+      handler = function(media: {Media}, progress: Progress)
          error('Not implemented')
       end,
    },
    {
       title = 'Download',
-      handler = function(media: Media, progress: Progress)
+      multiple = true,
+      handler = function(media: {Media}, progress: Progress)
          error('Not implemented')
       end,
    },

@@ -86,7 +86,7 @@ interface Action {
     /**
      * Function that will be called to perform the action.
      */
-    handler: (media: Media, progress: Progress) => void;
+    handler: (media: Media[], progress: Progress) => void;
 
     /**
      * Title to show in the list of actions.
@@ -107,7 +107,7 @@ interface Action {
 type Progress = (message: string) => void;
 
 export const search = {
-    handler: (query: string, progress: Progress) => [],
+    handler: (query: string, progress: Progress): Media[] => [],
 } as Search;
 
 /**
@@ -120,17 +120,17 @@ export const search = {
 export const layers = [
     {
         title: "Layer",
-        handler: (media: Media, progress: Progress) => [],
+        handler: (media: Media, progress: Progress): Media[] => [],
     },
 ] as Layer[];
 
 export const actions = [
     {
         title: "Stream",
-        handler: (media: Media, progress: Progress) => {},
+        handler: (medias: Media[], progress: Progress): void => {},
     },
     {
         title: "Download",
-        handler: (media: Media, progress: Progress) => {},
+        handler: (medias: Media[], progress: Progress): void => {},
     },
 ] as Action[];
