@@ -1,3 +1,3 @@
-module github.com/vivi-app/templates
+module github.com/awirix/templates
 
 go 1.19

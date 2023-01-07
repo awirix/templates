@@ -1,12 +1,12 @@
 # Templates
 
 This repository contains extension templates
-for the [vivi](https://github.com/vivi-app/vivi)
+for the [awirix](https://github.com/awirix/awirix)
 
 Something, that you would see when creating a new extension by running
 
 ```bash
-vivi x new
+awirix x new
 ```
 
 ## Supported Languages
