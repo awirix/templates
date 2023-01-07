@@ -1,4 +1,4 @@
-# Welcome to the Vivi's templates contribution guide!
+# Welcome to the Awirix templates contribution guide!
 
 ## How to contribute
 
@@ -29,7 +29,7 @@ Example:
 
 {{ .About }}
 
-> Lua scraper for [vivi](https://github.com/vivi-app/vivi)
+> Lua scraper for [awirix](https://github.com/awirix/awirix)
 ```
 
 Available variables for all `*.tmpl` files:
