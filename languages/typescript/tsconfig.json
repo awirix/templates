@@ -9,6 +9,6 @@
     "tstl": {
         "luaTarget": "5.1",
         "noImplicitSelf": true,
-        "noResolvePaths": ["vivi"]
+        "noResolvePaths": ["awirix"]
     }
 }

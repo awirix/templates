@@ -46,6 +46,7 @@ local M: Module = {}
 
 M.search = {
    handler = function(query: string, ctx: Context): {Media}
+      ctx.error('Not implemented')
       return {}
    end,
 }
@@ -54,6 +55,7 @@ M.layers = {
 	{
       title = 'Layer',
       handler = function(media: Media, ctx: Context): {Media}
+         ctx.error('Not implemented')
          return {}
       end,
    }
@@ -69,7 +71,6 @@ M.actions = {
    },
    {
       title = 'Download',
-      multiple = true,
       handler = function(media: {Media}, ctx: Context)
          ctx.error('Not implemented')
       end,

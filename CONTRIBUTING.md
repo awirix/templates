@@ -37,7 +37,6 @@ Available variables for all `*.tmpl` files:
 -   `Name`: The name of the extension ~ string
 -   `About`: The description of the extension ~ string
 -   `NSFW`: Whether the extension is NSFW or not ~ bool
--   `Libs`: Paths to the libraries used by the lua scraper ~ []string
 
 > [Learn golang templates syntax](https://golang.org/pkg/text/template/)
 

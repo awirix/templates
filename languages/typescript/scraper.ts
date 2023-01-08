@@ -20,7 +20,7 @@ interface Noun {
  */
 interface Media {
     /**
-     * Used for the string representation inside vivi's interface.
+     * Used for the string representation inside Awirix interface.
      */
     title: string;
 
@@ -75,7 +75,7 @@ interface Layer {
 
     /**
      * Name of the layer
-     * Will be used as a title of the layer in the vivi's interface.
+     * Will be used as a title of the layer in the Awirix interface.
      * E.g. "Seasons", "Episodes", "Books", etc.
      */
     title: string;
@@ -123,17 +123,20 @@ interface Context {
      * Function that will be called to show a progress message.
      * E.g. "Searching...", "Loading...", etc.
      */
-    Progress: (message: string) => void;
+    progress: (message: string) => void;
 
     /**
      * Function that will be called to abort the current operation
      * and show an error message.
      */
-    Error: (message: string) => void;
+    error: (message: string) => void;
 }
 
 export const search = {
-    handler: (query: string, ctx: Context): Media[] => [],
+    handler: (query: string, ctx: Context): Media[] => {
+        ctx.error("Not implemented");
+        return [];
+    },
 } as Search;
 
 /**
@@ -146,7 +149,10 @@ export const search = {
 export const layers = [
     {
         title: "Layer",
-        handler: (media: Media, ctx: Context): Media[] => [],
+        handler: (media: Media, ctx: Context): Media[] => {
+            ctx.error("Not implemented");
+            return [];
+        },
     },
 ] as Layer[];
 
@@ -154,10 +160,14 @@ export const actions = [
     {
         title: "Stream",
         max: 1,
-        handler: (medias: Media[], ctx: Context): void => {},
+        handler: (medias: Media[], ctx: Context): void => {
+            ctx.error("Not implemented");
+        },
     },
     {
         title: "Download",
-        handler: (medias: Media[], ctx: Context): void => {},
+        handler: (medias: Media[], ctx: Context): void => {
+            ctx.error("Not implemented");
+        },
     },
 ] as Action[];

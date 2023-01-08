@@ -1,20 +1,20 @@
 export search =
-    title: 'Search'
-    subtitle: 'Search results'
     handler: (query, ctx) ->
+        ctx.error 'Not implemented'
         {}
 
 export layers =
     * title: 'Layer'
       handler: (media, ctx) ->
+        ctx.error 'Not implemented'
         {}
 
 export actions =
     * title: 'Stream'
       max: 1
       description: 'Stream description'
-      handler: (medias, ctx) ->
+      handler: (medias, ctx) -> ctx.error 'Not implemented'
 
     * title: 'Download'
       description: 'Download description'
-      handler: (medias, ctx) ->
+      handler: (medias, ctx) -> ctx.error 'Not implemented'
