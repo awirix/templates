@@ -9,7 +9,4 @@ type Info struct {
 
 	// NSFW is a flag indicating whether the scraper is NSFW
 	NSFW bool
-
-	// Libs is the paths to the libraries used by the lua scraper
-	Libs []string
 }
