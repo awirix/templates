@@ -11,10 +11,9 @@ export layers =
 
 export actions =
     * title: 'Stream'
-      max: 1
       description: 'Stream description'
-      handler: (medias, ctx) -> ctx.error 'Not implemented'
+      handler: (media, ctx) -> ctx.error 'Not implemented'
 
     * title: 'Download'
       description: 'Download description'
-      handler: (medias, ctx) -> ctx.error 'Not implemented'
+      handler: (media, ctx) -> ctx.error 'Not implemented'

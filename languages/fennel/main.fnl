@@ -8,11 +8,10 @@
                            [])}])
 
 (local actions [{:title :Stream
-                 :max 1
-                 :handler (fn [medias ctx]
+                 :handler (fn [media ctx]
                             (ctx.error "Not implemented"))}
                 {:title :Download
-                 :handler (fn [medias ctx]
+                 :handler (fn [media ctx]
                             (ctx.error "Not implemented"))}])
 
 (tset module :search search)

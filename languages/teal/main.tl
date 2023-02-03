@@ -9,8 +9,8 @@ local record Noun
 end
 
 local record Media
-	title: string
-	description: string|nil
+   title: string
+   description: string|nil
    info: function(self: Media): string
 end
 
@@ -29,16 +29,14 @@ local record Layer
 end
 
 local record Action
-   handler: function(media: {Media}, ctx: Context)
+   handler: function(media: Media, ctx: Context)
    title: string
    description: string|nil
-   max: number|nil
-   min: number|nil
 end
 
 local record Module
    search: Search|nil
-	layers: {Layer}|nil
+   layers: {Layer}|nil
    actions: {Action}|nil
 end
 
@@ -64,14 +62,13 @@ M.layers = {
 M.actions = {
    {
       title = 'Stream',
-      max = 1,
-      handler = function(media: {Media}, ctx: Context)
+      handler = function(media: Media, ctx: Context)
          ctx.error('Not implemented')
       end,
    },
    {
       title = 'Download',
-      handler = function(media: {Media}, ctx: Context)
+      handler = function(media: Media, ctx: Context)
          ctx.error('Not implemented')
       end,
    },

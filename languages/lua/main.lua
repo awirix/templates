@@ -16,7 +16,7 @@
 
 --- Actions are further actions that can be performed on the selected media.
 --- Something like *stream* or *download*
---- @alias Action { title: string, handler: fun(media: Media[], ctx: Context), description: string?, max: number?, min: number? }
+--- @alias Action { title: string, handler: fun(media: Media, ctx: Context), description: string? }
 
 --- Context that is passed to the handler functions to report progress and errors.
 --- @alias Context { progress: fun(message: string), error: fun(message: string) }
@@ -51,14 +51,13 @@ M.layers = {
 M.actions = {
    {
       title = 'Search',
-      max = 1,
-      handler = function(medias, ctx)
+      handler = function(media, ctx)
          ctx.error('Not implemented')
       end
    },
    {
       title = 'Download',
-      handler = function(medias, ctx)
+      handler = function(media, ctx)
          ctx.error('Not implemented')
       end
    }

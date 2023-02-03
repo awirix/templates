@@ -40,31 +40,26 @@ Available variables for all `*.tmpl` files:
 
 > [Learn golang templates syntax](https://golang.org/pkg/text/template/)
 
-### `scraper.your-language-extension`
+### `main.your-language-extension`
 
 This file will be used as the template for the new extension scraper.
 
 It should contain the empty code for the scraper, and it should be a valid file for the language you are using.
 
-Take a look at the [lua](./languages/lua/scraper.lua) and [fennel](./languages/fennel/scraper.fnl) scrapers for example.
+Take a look at the [lua](./languages/lua/main.lua) and [fennel](./languages/fennel/main.fnl) scrapers for example.
 
-### `tester.your-language-extension`
+### `test.your-language-extension`
 
 This file will be used as the template for the new extension tester.
 
 It should contain the empty code for the tester, and it should be a valid file for the language you are using.
 
-Take a look at the [lua](./languages/lua/tester.lua) and [fennel](./languages/fennel/tester.fnl) testers for example.
+Take a look at the [lua](./languages/lua/test.lua) and [fennel](./languages/fennel/test.fnl) testers for example.
 
-### `scraper.lua` & `tester.lua`
+### `main.lua` & `test.lua`
 
 1. If compiler for your language is written in Lua 5.1 without any runtime dependencies, you should call it from these files.
-   Take a look at the [fennel](./languages/fennel/scraper.lua) and [teal](./languages/teal/scraper.lua) for examples.
+   Take a look at the [fennel](./languages/fennel/main.lua) and [teal](./languages/teal/main.lua) for examples.
 2. Otherwise (non-lua compiler, different version, etc...) you should include an error message in these files
    and point to the compilation instructions in the [README.md.tmpl](#readmemdtmpl) file.
-   See the [yue](./languages/yue/scraper.lua) and [typescript](./languages/typescript/scraper.ts) for examples.
-
-### Optional files
-
-It's a good practice to include some formatter configuration files, so the code is consistent across all extensions.
-For example, [stylua.toml](./languages/lua/stylua.toml) for Lua
+   See the [yue](./languages/yue/main.lua) and [typescript](./languages/typescript/main.ts) for examples.
